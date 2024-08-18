@@ -1,6 +1,13 @@
-function myFunction (input) {
-    console.log("This was entered as the functions arguement: ", input)
+function counter() {
+    let count = 0;
+    return function() {
+        count++;
+        return count;
+    };
 }
+let myCounter = counter();
 
+console.log(myCounter()); // 1
 
-myFunction("hello")
+console.log(myCounter()); // 2
+
